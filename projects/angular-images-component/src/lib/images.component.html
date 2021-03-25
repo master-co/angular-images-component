@@ -1,0 +1,18 @@
+<div class="y:sm"
+     [sortablejs]="images"
+     [sortablejsOptions]="sortableOptions">
+    <figure class="x:4 x:2@sm embedded by:1x1"
+            *ngFor="let image of images">
+        <img loading="lazy"
+             decoding="async"
+             [src]="imageUrl"
+             *ngIf="image | fileUrl: 'sm' | async as imageUrl">
+        <m-button (click)="images.splice(images.indexOf(image), 1)"
+                  class="xs round abs right top m:xs">
+            <i class="material-icons-outlined f:md">delete</i>
+        </m-button>
+    </figure>
+    <m-button class="x:4 x:2@sm outlined r:xxs by:1x1 sortable-ignore" (click)="upload.emit()">
+        <i class="material-icons-outlined">cloud_upload</i>
+    </m-button>
+</div>

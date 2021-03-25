@@ -3,5 +3,46 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "angular-images-component": {
+      "projectType": "library",
+      "root": "projects/angular-images-component",
+      "sourceRoot": "projects/angular-images-component/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/angular-images-component/tsconfig.lib.json",
+            "project": "projects/angular-images-component/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/angular-images-component/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/angular-images-component/src/test.ts",
+            "tsConfig": "projects/angular-images-component/tsconfig.spec.json",
+            "karmaConfig": "projects/angular-images-component/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/angular-images-component/tsconfig.lib.json",
+              "projects/angular-images-component/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "angular-images-component"
 }
