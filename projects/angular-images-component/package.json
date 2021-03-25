@@ -12,6 +12,7 @@
         "@angular/common": "^11.2.7",
         "@angular/core": "^11.2.7",
         "@master/file-center.angular": "^2.0.23",
+        "sortablejs": "^1.13.0",
         "ngx-sortablejs": "^11.1.0"
     },
     "dependencies": {
